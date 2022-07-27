@@ -119,6 +119,33 @@
        Subjects ON Course.Subject_id = Subjects.id INNER JOIN Professor ON Course.Professor_id
        Professor.id;
     ````
+    
+    
+    
+    
+    
+    
+       Select Subjects.id, Code, Duration From Course INNER JOIN Subjects ON
+      Course.Subject_id =
+     Subjects.id;
+     ````
+
+    
+    
+    
+    Select Subjects.id, Name, Code, Duration, F_Name, L_Name From Course INNER JOIN Subjects ON Course.Subject_id = Subjects.id INNER JOIN Professor ON Course.Professor_id = Professor.id;
+
+    
+    
+    
+    select Student.id , F_Name , L_Name , Address.Governorate , city from Student_Address INNER JOIN Student ON Student_Address.Student_id = Student.id INNER JOIN Address ON Student_Address.Address_id = Address.id ;
+
+    
+    
+    select Student.id , F_Name , L_Name , Course.Duration from Course_Enrolment INNER JOIN Student ON Course_Enrolment.Student_id = Student.id INNER JOIN Course ON Course_Enrolment.Course_id = Course.id ;
+
+    
+    
   
   
 
