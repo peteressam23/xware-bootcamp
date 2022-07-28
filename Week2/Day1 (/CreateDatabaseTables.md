@@ -1,4 +1,4 @@
-## Exercise - 3
+## Exercise 
 * Create ER diagram For The College Management System With following Tables
     * `Faculty` Table With These attributes:
         * `F_id:` Faculty id
