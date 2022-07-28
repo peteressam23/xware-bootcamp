@@ -1,60 +1,67 @@
-run the below command to update the package list on your Ubuntu server.
+# Exercises - 1 (Week1_Day5)
+1. Install postgresql and pgAdmin
+2. How connect pgAdmin to Postgresql
+3. Write You Commands in Your `xware-bootcamp`
+   * Clone Your Repo `xware-bootcamp`
+   * Create Folder `Week1` if Not Exists.
+   * Create File `Day5.md` Inside `Week1` Folder.
+   * In Your `Day5.md` File Put These Sentences.
+      * `# Day 5`.
+      * Then Put, `# Install Postgresql`.
+      * Then After That Put All Your Commands You Learned To Install Postgresql, And Every Command Should Start With `* >>> ` Then Write The Command.
+      * Then Put, `# Install pgAdmin`.
+      * Then After That Put All Your Commands You Learned To Install pgAdmin, And Every Command Should Start With `* >>> ` Then Write The Command.
 
-   * >>>  sudo apt update -y
-     
-Install the PostgreSQL packages by executing the below command. This command will also install the postgresql-contrib (additional Postgres features) and postgresql-client (Postgres CLI).
+_____________________________________________________________________________________
 
-  * >>>  sudo apt install -y postgresql postgresql-contrib postgresql-client     
-    
- After the installation, verify the Postgres installation status by running the below command.
-
-    * >>> sudo dpkg --status postgresql   
-     
-
-Once the installation completes, run the below systemctl command to start the PostgreSQL service.
-
-   * >>> sudo systemctl start postgresql.service
-     
-
-Finally, verify the PostgreSQL status by running the below command.
-
-  * >>>  sudo systemctl status postgresql.service
+## Solution & Commands_Install Postgresql.
 
 
-log in to the PostgreSQL shell (psql) by running the below command.
-     * >>> sudo -u postgres psql
-      
-.Run the following command at the prompt to initiate a password change. Provide a strong password of your choice and press Enter.
+ #### run the below command to update the package list on your Ubuntu server.
+ * >>>  sudo apt update
 
-          * >>> \password      
-           
-Open the /etc/postgresql/12/main/pg_hba.conf file in nano for editing. This file is the main configuration file for PostgreSQL’s authentication methods.
-           * >>> sudo nano /etc/postgresql/12/main/pg_hba.conf
-            
-            
- Find the line that reads as the below.
+ #### Install the PostgreSQL packages by executing the below command. This command will also install the postgresql-contrib
+ * >>> sudo apt install -y postgresql postgresql-contrib
 
-   * >>>  # Database administrative login by Unix domain socket
-      local   all             postgres                                                               peer                       
-      
-      
-      
- 
- Restart the PostgreSQL server for the changes to take effect.
+ #### After the installation, verify the Postgres installation status by running the below command.
+ * >>> sudo dpkg --status postgresql
 
-        * >>>  sudo systemctl restart postgresql
-          
-          
- Reconnect to the PostgreSQL server as the postgres user.
+ #### Run the following command to create a file named /etc/apt/sources.list.d/pgdg.list. This file contains PostgreSQL’s official repository’s address specific to your Ubuntu server version.
+ * >>> sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'\
 
-    * >>>  sudo -u postgres psql         
-       
-       
-       
- 
-      
- #install pgAdmin
+ #### Once the installation completes, run the below systemctl command to start the PostgreSQL service.
+ * >>> sudo systemctl start postgresql.service
 
-* >>>sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add     
-* >>>sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'      
-* >>> sudo apt install pgadmin4     
+ #### Finally, verify the PostgreSQL status by running the below command.
+ * >>> sudo systemctl status postgresql.service
+
+ #### Log in to the PostgreSQL shell (psql) by running the below command.
+ * >>> sudo -u postgres psql 
+ #### Run the following command at the prompt to initiate a password change. Provide a strong password of your choice and press Enter.
+ * >>> \password
+
+ #### to exit
+ * >>> \q or exit
+
+ #### Restart the PostgreSQL server for the changes to take effect.
+ * >>> sudo systemctl restart postgresql
+
+ #### Reconnect to the PostgreSQL server as the postgres user.
+ * >>> sudo -u postgres psql
+_______________________________________________________________________________
+
+## Solution & Commands_Install pgAdmin.
+
+ #### run the below command to update the package list on your Ubuntu server.
+ * >>> $ sudo apt-get update
+
+ #### Use the next command given to add pgAdmin repository in your Ubuntu system:
+ * >>> $ sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+ #### Finally, update the package lists.
+ * >>> $ sudo apt update
+
+ #### To install pgAdmin4 packages on Ubuntu, run this command, providing correct version number:
+ * >>> $ sudo apt install pgadmin4
+
+_____________________________________
