@@ -1,5 +1,5 @@
 
-# Exercise 1
+# Exercise 
 
 - Please Try To Solve This Problem
 - Table: Person

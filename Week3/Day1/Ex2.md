@@ -1,6 +1,6 @@
 
 
-# Exercise 2
+# Exercise 
 
 - Table: Logins
 +----------------+----------+
